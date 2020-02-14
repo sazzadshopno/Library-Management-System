@@ -10,15 +10,15 @@
 *	**Add Book**: The librarian can add book using this page. The librarian need to provide Book ID, Book name, book author, edition, number of books etc for the insertion to the database. A librarian can add existing book to update its inventory.  For adding existing book, the librarian have to insert book id to check whether the book is already in the bookshelf. If there is no book available with the book id then that ensures it's a new collection of book. The librarian adds the book accordingly.
 *	**Search Book**: Using this page, a librarian can search a specific book using book name, book id, author etc. This will show the number of books available also. From this page, Librarian can be routed to the issue book page by clicking issue this book. Issue this book option will be enable if and only if the book is available.
 ## Tables For Database
-* Student(student_id, student_name , student_roll, student_session);
-* Librarian(librarian_id, librarian_name);
-* Login_Credential(librarian_id, librarian_username, librarian_password);
-* Book(book_id, book_name, book_author, book_edition);
-* Issued_Book(student_id, book_id, issued_date, estimated_return_date, returned_date);
-* Fine(student_id, amount);
-* Department(department_id, department_name);
-* Inventory(book_id, number_of_books);
-* Student_Department(student_id, department_id);
+* Student(<ins>student_id</ins>, student_name , student_roll, student_session);
+* Librarian(<ins>librarian_id</ins>, librarian_name);
+* Login_Credential(<ins>librarian_id</ins>, librarian_username, librarian_password);
+* Book(<ins>book_id</ins>, book_name, book_author, book_edition);
+* Issued_Book(<ins>student_id</ins>, <ins>book_id</ins>, issued_date, estimated_return_date, returned_date);
+* Fine(<ins>student_id</ins>, amount);
+* Department(<ins>department_id</ins>, department_name);
+* Inventory(<ins>book_id</ins>, number_of_books);
+* Student_Department(<ins>student_id</ins>, <ins>department_id</ins>);
 ## ER Diagram
 <img src="https://i.imgur.com/panm18l.png" alt="ER Diagram">
 
