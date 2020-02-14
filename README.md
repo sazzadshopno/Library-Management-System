@@ -85,13 +85,13 @@ INSERT INTO student(student_id, student_name, student_roll, student_session) VAL
 
 INSERT INTO department(department_id, department_name) VALUES ('001DEPT', 'CSE'), ('002DEPT', 'BBA'), ('003DEPT', 'ECE');
 
- INSERT INTO librarian(librarian_id, librarian_name) VALUES ('001LIB', 'Nusrat Jahan'),('002LIB', 'Halima Islam'), ('003LIB', 'Nur Muhammad');
+INSERT INTO librarian(librarian_id, librarian_name) VALUES ('001LIB', 'Nusrat Jahan'),('002LIB', 'Halima Islam'), ('003LIB', 'Nur Muhammad');
  
- INSERT INTO book(book_id, book_name, book_author, book_edition) VALUES ('001BOOK', 'Software Engineering', 'Sommerville', '2nd'), ('002BOOK', 'Compiler Design Principles', 'Ullman and Aho', '2nd'), ('003BOOK', 'Introduction to Automata Theory', 'John E. Hopcroft', '3rd');
+INSERT INTO book(book_id, book_name, book_author, book_edition) VALUES ('001BOOK', 'Software Engineering', 'Sommerville', '2nd'), ('002BOOK', 'Compiler Design Principles', 'Ullman and Aho', '2nd'), ('003BOOK', 'Introduction to Automata Theory', 'John E. Hopcroft', '3rd');
  
 INSERT INTO student_department(department_id, student_id) VALUES ('001DEPT', '001A'),('002DEPT', '001B'), ('001DEPT', '001C'), ('003DEPT', '001D');
 
- INSERT INTO login_credential(librarian_id, librarian_username, librarian_password) VALUES ('001LIB', 'nusrat@library', 'admin123'), ('002LIB', 'halima@library', 'admin123'), ('003LIB', 'nur@library', 'admin123');
+INSERT INTO login_credential(librarian_id, librarian_username, librarian_password) VALUES ('001LIB', 'nusrat@library', 'admin123'), ('002LIB', 'halima@library', 'admin123'), ('003LIB', 'nur@library', 'admin123');
  
 INSERT INTO issued_book(book_id, student_id, issued_date, estimated_return_date, returned_date) VALUES ('001BOOK', '001A', '14-02-2020', '29-02-2020', ''), ('001BOOK', '001B', '14-02-2020', '29-02-2020', ''), ('002BOOK', '001D', '14-02-2020', '29-02-2020', '');
 
