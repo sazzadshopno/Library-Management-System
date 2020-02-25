@@ -68,6 +68,7 @@ input[type="text"] {
     color: grey;
     font-size: 14px;
 }
+
 input[type="number"] {
     width: 300px;
     background: whitesmoke;
@@ -78,6 +79,7 @@ input[type="number"] {
     color: grey;
     font-size: 14px;
 }
+
 input[type="submit"] {
     background: whitesmoke;
     border: 1px grey solid;
@@ -101,11 +103,60 @@ input[type="submit"]:hover {
     margin-right: auto;
     margin-left: auto;
 }
+
 .box table {
-    margin-top: 30%;
+    margin-top: 10%;
 }
-.box table  td{
+
+.box table td {
     font-weight: bolder;
     color: grey;
     font-size: 14px;
+}
+
+.button:hover {
+    cursor: pointer;
+    color:whitesmoke !important;
+}
+.button{
+    color: grey;
+    padding: 5px;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+
+.display-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+}
+
+.display-container {
+    position: relative;
+}
+
+.pale-green {
+    color: grey;
+    background-color: #ddffdd !important;
+}
+
+.pale-red {
+    color: grey;
+    background-color: #ffdddd !important;
+}
+
+.panel {
+    margin-top: 10px;
+    padding: 1px;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 15px;
+}
+p {
+    margin-left: 20px;
 }
