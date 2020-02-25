@@ -1,0 +1,106 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: whitesmoke;
+}
+
+header {
+    padding: 10px 15px;
+    color: black;
+    background-color: grey;
+    position: sticky;
+    top: 0;
+}
+
+
+#title {
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    padding-right: 70px;
+    color: whitesmoke;
+}
+
+.navbar .active {
+    background: whitesmoke;
+    color: grey;
+    border-radius: 15px;
+}
+
+.navbar a:hover {
+    opacity: 100%;
+}
+
+
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input {
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: .8s;
+    margin: 5px;
+}
+
+input[type="text"] {
+    width: 250px;
+    background: whitesmoke;
+    border: 1px grey solid;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: grey;
+}
+input[type="number"] {
+    width: 250px;
+    background: whitesmoke;
+    border: 1px grey solid;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: grey;
+}
+input[type="submit"] {
+    background: whitesmoke;
+    border: 1px grey solid;
+    outline: none;
+    padding: 5px 20px;
+    font-weight: bolder;
+    color: grey;
+    border-radius: 12px;
+}
+
+input[type="submit"]:hover {
+    color: whitesmoke;
+    background: grey;
+}
+
+.box {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.box table {
+    margin-top: 30%;
+}
+.box table  td{
+    font-weight: bolder;
+    color: grey;
+}
