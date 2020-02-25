@@ -6,7 +6,25 @@
             <table align="center">
                 <?php
                 include '../include/connection.php';
-
+                if(isset($_GET['success'])){
+                    if($_GET['success'] == 'true'){
+                        ?>
+                        <div class="panel pale-green display-container">
+                        <span onclick="this.parentElement.style.display='none'"
+                            class="button display-topright">&times;</span>
+                            <p>Success</p>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="panel pale-red display-container">
+                        <span onclick="this.parentElement.style.display='none'"
+                        class="button display-right">&times;</span>
+                            <p>Invalid ISBN No.</p>
+                        </div>
+                        <?php
+                    }
+                }
                 if (isset($_GET['isbn'])) {
                     $isbn = $_GET['isbn'];
                     echo '<tr><td>ISBN No.</td><td><input type="text" name="isbn_no" value = ' . $isbn . ' required="" autocomplete="off" disabled></td></tr>';
