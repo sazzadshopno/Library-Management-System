@@ -1,16 +1,6 @@
 <?php
-include '../include/config.php';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<?php
-include '../include/head.php';
-?>
-
-<body>
-    <?php
     include '../include/header.php';
-    ?>
+?>
     <div class="box">
         <form action="widget/bookentry.php" method="post">
             <table align="center">
