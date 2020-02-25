@@ -11,7 +11,7 @@
                         ?>
                         <div class="panel pale-green display-container">
                         <span onclick="this.parentElement.style.display='none'"
-                            class="button display-topright">&times;</span>
+                            class="button display-right">&times;</span>
                             <p>Success</p>
                         </div>
                         <?php
