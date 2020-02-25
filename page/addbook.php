@@ -40,7 +40,7 @@
                         echo '<tr><td>Title</td><td><input type="text" name="title" value = "' . $title . '"  autocomplete="off" readonly></td></tr>';
                         echo '<tr><td>Author</td><td><input type="text" name="author" value = "' . $author . '"  autocomplete="off" readonly></td></tr>';
                         echo '<tr><td>Stocked</td><td><input type="number" name="stock" value = "' . $stock . '" autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Quantity</td><td><input type="number" placeholder = "Enter Quanity.." name="quantity" required="" min="0" autocomplete="off" ></td></tr>';
+                        echo '<tr><td>Quantity</td><td><input type="number" placeholder = "Enter Quanity.." name="quantity" required="" min="'.-$available.'" autocomplete="off" ></td></tr>';
                         echo '<tr><td><input type="hidden" value = "'.$available.'" name="available"  autocomplete="off" ></td></tr>';
                         echo '<tr><td></td><td><input type="submit" name="update" value = "UPDATE" ></td></tr>';
                     } else {
