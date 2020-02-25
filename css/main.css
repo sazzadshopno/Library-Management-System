@@ -1,5 +1,6 @@
 * {
     font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
 }
 
 body {
@@ -58,24 +59,24 @@ input {
 }
 
 input[type="text"] {
-    width: 250px;
+    width: 300px;
     background: whitesmoke;
     border: 1px grey solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    font-weight: bold;
     color: grey;
+    font-size: 14px;
 }
 input[type="number"] {
-    width: 250px;
+    width: 300px;
     background: whitesmoke;
     border: 1px grey solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    font-weight: bold;
     color: grey;
+    font-size: 14px;
 }
 input[type="submit"] {
     background: whitesmoke;
@@ -85,11 +86,14 @@ input[type="submit"] {
     font-weight: bolder;
     color: grey;
     border-radius: 12px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
 }
 
 input[type="submit"]:hover {
     color: whitesmoke;
     background: grey;
+    cursor: pointer;
 }
 
 .box {
@@ -103,4 +107,5 @@ input[type="submit"]:hover {
 .box table  td{
     font-weight: bolder;
     color: grey;
+    font-size: 14px;
 }
