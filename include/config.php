@@ -4,9 +4,9 @@
 			$CURRENT_PAGE = "Issue"; 
 			$PAGE_TITLE = "Issue Book";
 			break;
-		case "/library/page/addbook.php":
-			$CURRENT_PAGE = "Add"; 
-			$PAGE_TITLE = "Add Book";
+		case "/library/page/managebook.php":
+			$CURRENT_PAGE = "Manage Book"; 
+			$PAGE_TITLE = "Manage Book";
             break;
         case "/library/page/logout.php":
             $CURRENT_PAGE = "Logout"; 

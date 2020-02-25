@@ -3,14 +3,14 @@
     if(isset($_POST['validate'])){
         $isbn = trim($_POST['isbn_no']);
         if($isbn == ""){
-            header("Location: ../addbook.php?success=false");
+            header("Location: ../managebook.php?success=false");
             exit();
         }
         $sql = "SELECT * FROM book WHERE isbn_no = $isbn LIMIT 1;";
         $result = $con->query($sql);
         $available = $result->num_rows == 1? 'true' : 'false';
         $con->close();
-        header("Location: ../addbook.php?isbn=$isbn&available=$available"); 
+        header("Location: ../managebook.php?isbn=$isbn&available=$available"); 
         exit();
     }else if(isset($_POST['add'])){
         $isbn_no = $_POST['isbn_no'];
@@ -26,9 +26,9 @@
         $secondresult = $con->query($bookmanagetablesql);
         $con->close();
         if($firstresult && $secondresult){
-            header("Location: ../addbook.php?success=true");
+            header("Location: ../managebook.php?success=true");
         }else{
-            header("Location: ../addbook.php?success=false");
+            header("Location: ../managebook.php?success=false");
         }
         exit();
     }else if(isset($_POST['update'])){
@@ -49,9 +49,9 @@
         $secondresult = $con->query($bookmanagetablesql);
         $con->close();
         if($firstresult && $secondresult){
-            header("Location: ../addbook.php?success=true");
+            header("Location: ../managebook.php?success=true");
         }else{
-            header("Location: ../addbook.php?success=false");
+            header("Location: ../managebook.php?success=false");
         }
         exit();
     }
