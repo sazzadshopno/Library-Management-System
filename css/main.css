@@ -1,6 +1,5 @@
 * {
     font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
 }
 
 body {
@@ -120,8 +119,8 @@ input[type="submit"]:hover {
 }
 .button{
     color: grey;
-    padding: 5px;
-    margin-right: 15px;
+    padding: 2px;
+    margin-right: 5px;
     font-size: 20px;
 }
 
@@ -154,7 +153,6 @@ input[type="submit"]:hover {
     letter-spacing: 1.5px;
     font-weight: 500;
     width: 100%;
-    border-radius: 25px;
     font-size: 12px;
 }
 p {

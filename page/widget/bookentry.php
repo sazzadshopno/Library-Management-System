@@ -3,7 +3,7 @@
     if(isset($_POST['validate'])){
         $isbn = trim($_POST['isbn_no']);
         if($isbn == ""){
-            header("Location: ../managebook.php?success=false");
+            header("Location: ../managebook.php?error=isbn");
             exit();
         }
         $sql = "SELECT * FROM book WHERE isbn_no = $isbn LIMIT 1;";
@@ -26,9 +26,9 @@
         $secondresult = $con->query($bookmanagetablesql);
         $con->close();
         if($firstresult && $secondresult){
-            header("Location: ../managebook.php?success=true");
+            header("Location: ../managebook.php?success=add");
         }else{
-            header("Location: ../managebook.php?success=false");
+            header("Location: ../managebook.php?error=add");
         }
         exit();
     }else if(isset($_POST['update'])){
@@ -40,18 +40,27 @@
         $available = $_POST['available'];
         $newstock = (string)((int)$_POST['stock'] + (int)$_POST['quantity']);
         $newavailable = (string)((int)$_POST['available'] + (int)$_POST['quantity']);
-        $librarian = 'LIB_001';
-        $date = date('Y-m-d');
-
+        
         $booktablesql = "UPDATE book SET stock = $newstock, available = $newavailable WHERE isbn_no LIKE $isbn_no;";
         $firstresult = $con->query($booktablesql);
-        $bookmanagetablesql = "INSERT INTO bookmanagedby (librarian_id, isbn_no, stock_date) VALUES ('$librarian', '$isbn_no', '$date');";
-        $secondresult = $con->query($bookmanagetablesql);
         $con->close();
-        if($firstresult && $secondresult){
-            header("Location: ../managebook.php?success=true");
+        if($firstresult){
+            header("Location: ../managebook.php?success=update");
         }else{
-            header("Location: ../managebook.php?success=false");
+            header("Location: ../managebook.php?error=update");
+        }
+        exit();
+    }else if(isset($_POST['delete'])){
+        $isbn_no = $_POST['isbn_no'];
+        $librarian = 'LIB_001';
+        
+        $sql = "DELETE FROM book WHERE isbn_no = $isbn_no;";
+        $firstresult = $con->query($sql);
+        $con->close();
+        if($firstresult){
+            header("Location: ../managebook.php?success=delete");
+        }else{
+            header("Location: ../managebook.php?error=delete");
         }
         exit();
     }
