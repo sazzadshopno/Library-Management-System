@@ -98,13 +98,13 @@ input[type="submit"]:hover {
 }
 
 .box {
-    width: 400px;
+    width: 500px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .box table {
-    margin-top: 10%;
+    margin-top: 20px;
 }
 
 .box table td {
@@ -168,4 +168,33 @@ select {
     color: grey;
     font-size: 14px;
     margin: 5px;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 500px;
+}
+.result {
+    padding: 15px;
+}
+.result table{
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+.result th {
+    text-transform: uppercase;
+}
+.result tr{
+    cursor: pointer;
+}
+.result td, .result th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.result tr:nth-child(even) {
+    background-color: #dddddd;
 }

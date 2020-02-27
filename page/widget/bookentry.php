@@ -2,7 +2,14 @@
     include('../../include/connection.php');
     if(isset($_POST['validate'])){
         $isbn = trim($_POST['isbn_no']);
-        if($isbn == ""){
+        $flag = 0;
+        for($i = 0; $i < strlen($isbn); $i++){
+            if(!is_numeric($isbn[$i])){
+                $flag = 1;
+                break;
+            }
+        }
+        if($flag){
             header("Location: ../managebook.php?error=isbn");
             exit();
         }
