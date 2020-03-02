@@ -187,8 +187,11 @@ select {
 .result th {
     text-transform: uppercase;
 }
-.result tr{
+.result td{
     cursor: pointer;
+}
+.result tr:hover{
+    font-weight: bold;
 }
 .result td, .result th{
     border: 1px solid #dddddd;

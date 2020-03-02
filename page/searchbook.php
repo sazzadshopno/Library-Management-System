@@ -17,9 +17,9 @@ include '../include/header.php';
 <div class="result">
     
     <?php
+    include('../include/connection.php');
         if(isset($_GET['type'])){
-            include('../include/connection.php');
-            echo "<h3>Search result of: ". $_GET['value'] ."</h3>";
+            echo "<h3>Search result of: ". $_GET['value'] ." <button onclick='viewsearch()'>Clear</button></h3>";
             if($_GET['type'] == 'isbn'){
                 $isbn = $_GET['value'];
                 $sql = "SELECT * FROM book WHERE isbn_no = $isbn;";
@@ -28,14 +28,17 @@ include '../include/header.php';
                     header("Location: searchbook.php?error=noresult");
                     exit();
                 }
+                
                 echo "<table align='center'>";
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
                 echo '<th>Stock</th>';
                 echo '<th>Available</th></tr>';
+                $keyword = $_GET['value'];
                 while($row = $result->fetch_assoc()){
-                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
+                    $isbn = preg_replace("/$keyword/i", "<b style='background-color:yellow;'>$0</b>", $row['isbn_no']);
+                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$isbn.'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
                     echo '<td>'.$row['stock'].'</td>';
@@ -57,6 +60,31 @@ include '../include/header.php';
                 echo '<th>Author</th>';
                 echo '<th>Stock</th>';
                 echo '<th>Available</th></tr>';
+                $keyword = $_GET['value'];
+                while($row = $result->fetch_assoc()){
+                    $book = preg_replace("/$keyword/i", "<b style='background-color:yellow;'>$0</b>", $row['book_title']);
+                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
+                    echo '<td>'.$book.'</td>';
+                    echo '<td>'.$row['book_author'].'</td>';
+                    echo '<td>'.$row['stock'].'</td>';
+                    echo '<td>'.$row['available'].'</td></tr>';
+                }
+                echo "</table>";
+                $con->close();
+            }
+        }else{
+                $sql = "SELECT * FROM book;";
+                $result = $con->query($sql);
+                if($result->num_rows == 0){
+                    header("Location: searchbook.php?error=noresult");
+                    exit();
+                }
+                echo "<table align='center'>";
+                echo '<tr><th>ISBN No.</th>';
+                echo '<th>Title</th>';
+                echo '<th>Author</th>';
+                echo '<th>Stock</th>';
+                echo '<th>Available</th></tr>';
                 while($row = $result->fetch_assoc()){
                     echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
@@ -66,13 +94,15 @@ include '../include/header.php';
                 }
                 echo "</table>";
                 $con->close();
-            }
         }
     ?>
     </div>
     <script type=text/javascript language="javascript" >
         function view(isbn){
             window.location = 'managebook.php?isbn=' + isbn + '&available=true';
+        }
+        function viewsearch(){
+            window.location = 'searchbook.php';
         }
     </script>
 </body>
