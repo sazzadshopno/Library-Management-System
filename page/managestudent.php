@@ -18,9 +18,16 @@
                         echo '<tr><td>Session</td><td><input type="text" name="student_session" value = "' . $row['student_session'] . '"  autocomplete="off" readonly></td></tr>';
                         echo '<tr><td>Department</td><td><input type="text" name="student_department" value = "' . $row['student_department'] . '" autocomplete="off" readonly></td></tr>';
                         echo '<tr><td>Roll</td><td><input type="text" value = "'.$row['student_roll'].'" autofocus="true" name="student_roll" autocomplete="off" readonly ></td></tr>';
-                        echo '<tr><td>Fine</td><td><input type="number" value = "'. $row['student_fine'] .'" name="student_fine"  autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Recieved Amount</td><td><input type="number" value = "0" min = "0" max = "'. $row['student_fine'] .'" name="student_fine_received"  autocomplete="off"></td></tr>';
-                        echo '<tr><td><input type="submit" onclick="return studentdeleteClicked();" name="delete" value = "DELETE" ></td><td><input type="submit" onclick="return studentupdateClicked();" name="update" value = "UPDATE" ></td></tr>';
+                        if((int)$row['student_fine'] > 0){
+                            echo '<tr><td>Fine</td><td><input type="number" value = "'. $row['student_fine'] .'" name="student_fine"  autocomplete="off" readonly></td></tr>';
+                            echo '<tr><td>Recieved Amount</td><td><input type="number" value = "0" min = "0" max = "'. $row['student_fine'] .'" name="student_fine_received"  autocomplete="off"></td></tr>';
+                        }
+                        echo '<tr><td><input type="submit" onclick="return studentdeleteClicked();" name="delete" value = "DELETE" ></td>';
+                        if((int)$row['student_fine'] > 0){
+                            echo '<td><input type="submit" onclick="return studentupdateClicked();" name="update" value = "UPDATE" ></td>';
+                        }
+                        echo '</tr>';
+
                     } else {
                         ?>
                         <div class="panel pale-red display-container">

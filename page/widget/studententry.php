@@ -58,18 +58,5 @@
             header("Location: ../managestudent.php?error=delete");
         }
         exit();
-    }else if(isset($_POST['goback'])){
-        $student_id = $_POST['student_id'];
-        $librarian = 'LIB_001';
-        
-        $sql = "DELETE FROM student WHERE student_id = $student_id;";
-        $firstresult = $con->query($sql);
-        $con->close();
-        if($firstresult){
-            header("Location: ../managestudent.php?success=delete");
-        }else{
-            header("Location: ../managestudent.php?error=delete");
-        }
-        exit();
     }
 ?>
