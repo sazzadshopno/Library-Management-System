@@ -2,13 +2,13 @@
 ## Requirements
    This system will keep book entry record, book issue and return record. Admin can make any query regarding a student issued or returned book, fine if return date expire, required book whether available or not.
 ## Planning
-*	Librarian can login to the system using username and password.
-*	Issue Book
-*	Fine Payment 
-*	Active Issued Book  
-*   Add Student
-*	Add Book 
+*	Librarian Login.
+*   Active Issued Book
+*	Issue Book  
+*   Manage Book
+*   Manage Book
 *	Search Book 
+*   Logout
 
 ## Tables For Database
 1. librarian(<ins>**librarian_id**</ins>, librarian_name, librarian_username, librarian_password);
