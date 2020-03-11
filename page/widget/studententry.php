@@ -18,15 +18,14 @@
         $student_session = $_POST['student_session'];
         $student_department = $_POST['student_department'];
         $student_roll = $_POST['student_roll'];
-        $librarian = 'LIB_001';
+        $librarian = '1';
         $date = date('Y-m-d');
-        echo $student_session;
-        $studenttablesql = "INSERT INTO student (student_id, student_name, student_session, student_department, student_roll, student_fine) VALUES ('$student_id', '$student_name', '$student_session', '$student_department', '$student_roll', '0');";
+        
+        $studenttablesql = "INSERT INTO student (student_id, librarian_id, student_name, student_session, student_department, student_roll, student_fine, std_reg_date) VALUES ('$student_id', '$librarian','$student_name', '$student_session', '$student_department', '$student_roll', '0', '$date');";
         $firstresult = $con->query($studenttablesql);
-        $studentmanagetablesql = "INSERT INTO studentmanagedby (librarian_id, student_id, std_reg_date) VALUES ('$librarian', '$student_id', '$date');";
-        $secondresult = $con->query($studentmanagetablesql);
+        
         $con->close();
-        if($firstresult && $secondresult){
+        if($firstresult){
             header("Location: ../managestudent.php?success=add");
         }else{
             header("Location: ../managestudent.php?error=add");

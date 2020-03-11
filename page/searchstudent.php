@@ -80,7 +80,6 @@ include '../include/header.php';
                 $sql = "SELECT * FROM student;";
                 $result = $con->query($sql);
                 if($result->num_rows == 0){
-                    header("Location: searchstudent.php?error=noresult");
                     exit();
                 }
                 echo "<table align='center'>";

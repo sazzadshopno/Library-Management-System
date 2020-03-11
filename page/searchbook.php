@@ -76,7 +76,6 @@ include '../include/header.php';
                 $sql = "SELECT * FROM book;";
                 $result = $con->query($sql);
                 if($result->num_rows == 0){
-                    header("Location: searchbook.php?error=noresult");
                     exit();
                 }
                 echo "<table align='center'>";

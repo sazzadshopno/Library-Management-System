@@ -24,15 +24,14 @@
         $title = $_POST['title'];
         $author = $_POST['author'];
         $quantity = $_POST['quantity'];
-        $librarian = 'LIB_001';
+        $librarian = '1';
         $date = date('Y-m-d');
 
-        $booktablesql = "INSERT INTO book (isbn_no, book_title, book_author, stock, available) VALUES ('$isbn_no', '$title', '$author', '$quantity', '$quantity');";
+        $booktablesql = "INSERT INTO book (isbn_no, book_title, book_author, stock, available, librarian_id, stock_date) VALUES ('$isbn_no', '$title', '$author', '$quantity', '$quantity', '$librarian', '$date');";
         $firstresult = $con->query($booktablesql);
-        $bookmanagetablesql = "INSERT INTO bookmanagedby (librarian_id, isbn_no, stock_date) VALUES ('$librarian', '$isbn_no', '$date');";
-        $secondresult = $con->query($bookmanagetablesql);
+        
         $con->close();
-        if($firstresult && $secondresult){
+        if($firstresult){
             header("Location: ../managebook.php?success=add");
         }else{
             header("Location: ../managebook.php?error=add");
