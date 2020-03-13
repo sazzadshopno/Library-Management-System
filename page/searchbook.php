@@ -33,7 +33,7 @@ include '../include/header.php';
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
-                echo '<th>Stock</th>';
+                
                 echo '<th>Available</th></tr>';
                 $keyword = $_GET['value'];
                 while($row = $result->fetch_assoc()){
@@ -41,7 +41,7 @@ include '../include/header.php';
                     echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$isbn.'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
-                    echo '<td>'.$row['stock'].'</td>';
+                    
                     echo '<td>'.$row['available'].'</td></tr>';
                 }
                 echo "</table>";
@@ -58,7 +58,7 @@ include '../include/header.php';
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
-                echo '<th>Stock</th>';
+                
                 echo '<th>Available</th></tr>';
                 $keyword = $_GET['value'];
                 while($row = $result->fetch_assoc()){
@@ -66,7 +66,7 @@ include '../include/header.php';
                     echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$book.'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
-                    echo '<td>'.$row['stock'].'</td>';
+                    
                     echo '<td>'.$row['available'].'</td></tr>';
                 }
                 echo "</table>";
@@ -82,13 +82,13 @@ include '../include/header.php';
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
-                echo '<th>Stock</th>';
+                
                 echo '<th>Available</th></tr>';
                 while($row = $result->fetch_assoc()){
                     echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
-                    echo '<td>'.$row['stock'].'</td>';
+                    
                     echo '<td>'.$row['available'].'</td></tr>';
                 }
                 echo "</table>";

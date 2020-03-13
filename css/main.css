@@ -78,7 +78,16 @@ input[type="number"] {
     color: grey;
     font-size: 14px;
 }
-
+input[type="date"] {
+    width: 300px;
+    background: whitesmoke;
+    border: 1px grey solid;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: grey;
+    font-size: 14px;
+}
 input[type="submit"] {
     background: whitesmoke;
     border: 1px grey solid;
@@ -186,6 +195,7 @@ select {
 }
 .result th {
     text-transform: uppercase;
+    text-align: center;
 }
 .result td{
     cursor: pointer;
