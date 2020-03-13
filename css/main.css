@@ -1,190 +1,98 @@
 * {
     font-family: 'Raleway', sans-serif;
 }
-
 body {
     margin: 0;
     background: whitesmoke;
 }
-
-header {
-    padding: 10px 15px;
-    color: black;
-    background-color: grey;
-    position: sticky;
-    top: 0;
+.navbar-toggler:focus, .close:focus {
+    outline: none;
 }
-
-
-#title {
-    font-size: 16px;
-    font-weight: bolder;
-    letter-spacing: 4px;
-    padding-right: 70px;
-    color: whitesmoke;
-}
-
-.navbar .active {
-    background: whitesmoke;
-    color: grey;
-    border-radius: 15px;
-}
-
-.navbar a:hover {
-    opacity: 100%;
-}
-
-
-.navbar {
-    overflow: hidden;
-}
-
 .navbar a {
-    float: left;
-    color: whitesmoke;
-    text-align: center;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
 }
-
 input {
     display: inline-block;
     font-size: 16px;
     box-sizing: border-box;
-    transition: .8s;
+    transition: 1s;
     margin: 5px;
 }
-
 input[type="text"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px grey solid;
+    border: 1px #343A40 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: grey;
+    color: #343A40;
     font-size: 14px;
 }
-
 input[type="number"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px grey solid;
+    border: 1px #343A40 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: grey;
+    color: #343A40;
     font-size: 14px;
 }
 input[type="date"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px grey solid;
+    border: 1px #343A40 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: grey;
+    color: #343A40;
     font-size: 14px;
 }
 input[type="submit"] {
     background: whitesmoke;
-    border: 1px grey solid;
+    border: 1px #343A40 solid;
     outline: none;
     padding: 5px 20px;
     font-weight: bolder;
-    color: grey;
+    color: #343A40;
     border-radius: 12px;
     font-size: 14px;
     letter-spacing: 1.5px;
 }
-
 input[type="submit"]:hover {
     color: whitesmoke;
-    background: grey;
+    background: #343A40;
     cursor: pointer;
 }
-
-.box {
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.box table {
-    margin-top: 20px;
-}
-
-.box table td {
-    font-weight: bolder;
-    color: grey;
-    font-size: 14px;
-}
-
-.button:hover {
-    cursor: pointer;
-    color:whitesmoke !important;
-}
-.button{
-    color: grey;
-    padding: 2px;
-    margin-right: 5px;
-    font-size: 20px;
-}
-
-
-.display-right {
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0%, -50%);
-    -ms-transform: translate(0%, -50%);
-}
-
-.display-container {
-    position: relative;
-}
-
-.pale-green {
-    color: grey;
-    background-color: #ddffdd !important;
-}
-
-.pale-red {
-    color: grey;
-    background-color: #ffdddd !important;
-}
-
-.panel {
-    margin-top: 10px;
-    padding: 1px;
-    letter-spacing: 1.5px;
-    font-weight: 500;
-    width: 100%;
-    font-size: 12px;
-}
-p {
-    margin-left: 20px;
-}
-select {
-    width: 300px;
-    background: whitesmoke;
-    border: 1px grey solid;
-    outline: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: grey;
-    font-size: 14px;
-    margin: 5px;
-}
-
 .container{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     width: 500px;
 }
+.container table {
+    margin-top: 20px;
+}
+.container table tr{
+    margin-bottom: 15px;
+}
+.container table td {
+    font-weight: bolder;
+    color: #343A40;
+    font-size: 14px;
+}
+select {
+    width: 300px;
+    background: whitesmoke;
+    border: 1px #343A40 solid;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #343A40;
+    font-size: 14px;
+    margin: 5px;
+}
+
 .result {
     padding: 15px;
 }
@@ -217,7 +125,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;

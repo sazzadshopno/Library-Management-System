@@ -1,7 +1,7 @@
 <?php
     include '../include/header.php';
 ?>
-    <div class="box">
+    <div class="container">
         <form action="widget/bookentry.php" method="post">
             <table align="center">
                 <?php
