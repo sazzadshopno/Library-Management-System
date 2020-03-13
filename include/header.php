@@ -18,7 +18,7 @@ include 'config.php';
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">LIBSYS</a>
+        <a class="navbar-brand" href="./index.php">LIBSYS</a>
         <button class="navbar-toggler" type="button" onclick="this.blur();" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
