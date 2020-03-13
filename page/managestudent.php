@@ -30,10 +30,11 @@
 
                     } else {
                         ?>
-                        <div class="panel pale-red display-container">
-                        <span onclick="this.parentElement.style.display='none'"
-                        class="button display-right">&times;</span>
-                            <p>The student id does not exist in our database. Add student using the form below. </p>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> The student id does not exist in our database. Add student using the form below.
+                            <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <?php    
                         echo '<tr><td>Student ID</td><td><input type="text" name="student_id" value = "'.$student_id.'" autocomplete="off" readonly></td></tr>';

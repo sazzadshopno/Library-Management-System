@@ -22,10 +22,11 @@
                         echo '<tr><td><input type="submit" onclick="return deleteClicked();" name="delete" value = "DELETE" ></td><td><input type="submit" onclick="return updateClicked();" name="update" value = "UPDATE" ></td></tr>';
                     } else {
                         ?>
-                        <div class="panel pale-red display-container">
-                        <span onclick="this.parentElement.style.display='none'"
-                        class="button display-right">&times;</span>
-                            <p>The book does not exist in our database. Add book using the form below. </p>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> The book does not exist in our database. Add book using the form below.
+                            <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <?php
                         echo '<tr><td>ISBN No.</td><td><input type="text" name="isbn_no" value = "'.$isbn.'" autocomplete="off" readonly></td></tr>';
