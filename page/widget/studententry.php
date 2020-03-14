@@ -34,8 +34,9 @@
     }else if(isset($_POST['update'])){
         $student_id = $_POST['student_id'];
         $newfine = (string)((int)$_POST['student_fine'] - (int)$_POST['student_fine_received']);
-        
-        $studenttablesql = "UPDATE student SET student_fine = $newfine WHERE student_id LIKE '$student_id';";
+        $student_name = $_POST['student_name'];
+        $student_roll = $_POST['student_roll'];
+        $studenttablesql = "UPDATE student SET student_fine = $newfine, student_name = '$student_name', student_roll = '$student_roll' WHERE student_id LIKE '$student_id';";
         $firstresult = $con->query($studenttablesql);
         $con->close();
         if($firstresult){
@@ -46,7 +47,6 @@
         exit();
     }else if(isset($_POST['delete'])){
         $student_id = $_POST['student_id'];
-        $librarian = 'LIB_001';
         
         $sql = "DELETE FROM student WHERE student_id = $student_id;";
         $firstresult = $con->query($sql);

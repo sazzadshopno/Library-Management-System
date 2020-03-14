@@ -42,12 +42,15 @@
         $title = $_POST['title'];
         $author = $_POST['author'];
         $stock = $_POST['stock'];
-        $quantity = $_POST['quantity'];
         $available = $_POST['available'];
-        $newstock = (string)((int)$_POST['stock'] + (int)$_POST['quantity']);
-        $newavailable = (string)((int)$_POST['available'] + (int)$_POST['quantity']);
-        
-        $booktablesql = "UPDATE book SET stock = $newstock, available = $newavailable WHERE isbn_no LIKE $isbn_no;";
+        $prevstock = $_POST['prevstock'];
+        $newavailable = (int)$_POST['available'] + ((int)$_POST['stock'] - (int)$_POST['prevstock']);
+        echo $newavailable;
+        if($newavailable < 0){
+            header("Location: ../managebook.php?error=update");
+            exit();
+        }
+        $booktablesql = "UPDATE book SET stock = $stock, available = $newavailable, book_title = '$title', book_author = '$author'  WHERE isbn_no LIKE $isbn_no;";
         $firstresult = $con->query($booktablesql);
         $con->close();
         if($firstresult){

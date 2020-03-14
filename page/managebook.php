@@ -14,11 +14,11 @@
                         $result = $con->query($sql);
                         $row = $result->fetch_assoc();
                         echo '<tr><td>ISBN No.</td><td><input type="text" name="isbn_no" value = "' . $row['isbn_no'] . '"  autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Title</td><td><input type="text" name="title" value = "' . $row['book_title'] . '"  autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Author</td><td><input type="text" name="author" value = "' . $row['book_author'] . '"  autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Stocked</td><td><input type="number" name="stock" value = "' . $row['stock'] . '" autocomplete="off" readonly></td></tr>';
-                        echo '<tr><td>Quantity</td><td><input type="number" value = "0" autofocus="true" name="quantity" min="'.-$row['available'].'" autocomplete="off" ></td></tr>';
+                        echo '<tr><td>Title</td><td><input type="text" name="title" value = "' . $row['book_title'] . '"  autocomplete="off" ></td></tr>';
+                        echo '<tr><td>Author</td><td><input type="text" name="author" value = "' . $row['book_author'] . '"  autocomplete="off" ></td></tr>';
+                        echo '<tr><td>Stocked</td><td><input type="number" min = "0" name="stock" value = "' . $row['stock'] . '" autocomplete="off" ></td></tr>';
                         echo '<tr><td><input type="hidden" value = "'. $row['available'] .'" name="available"  autocomplete="off" ></td></tr>';
+                        echo '<tr><td><input type="hidden" value = "'. $row['stock'] .'" name="prevstock"  autocomplete="off" ></td></tr>';
                         echo '<tr><td><input type="submit" onclick="return deleteClicked();" name="delete" value = "DELETE" ></td><td><input type="submit" onclick="return updateClicked();" name="update" value = "UPDATE" ></td></tr>';
                     } else {
                         ?>
