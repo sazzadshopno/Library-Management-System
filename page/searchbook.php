@@ -8,7 +8,7 @@ include '../include/header.php';
     <form action="widget/searchbook.php" method="post">
         <table align="center">
             <tr>
-                <th><input type="text" name="isbnortitle" autocomplete = "off" placeholder="Enter the ISBN or Title of the book.."></th>
+                <th style="padding-right:.5rem"><input type="text" name="isbnortitle" autocomplete = "off" placeholder="Enter the ISBN or Title of the book.."></th>
                 <th><input type="submit" name="search" value="SEARCH"></th>
             </tr>
         </table>
@@ -34,15 +34,15 @@ include '../include/header.php';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
                 
-                echo '<th>Available</th></tr>';
+                echo '<th>Available</th><th>Option</th></tr>';
                 $keyword = $_GET['value'];
                 while($row = $result->fetch_assoc()){
                     $isbn = preg_replace("/$keyword/i", "<b style='background-color:yellow;'>$0</b>", $row['isbn_no']);
-                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$isbn.'</td>';
+                    echo '<tr><td>'.$isbn.'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
                     
-                    echo '<td>'.$row['available'].'</td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();
@@ -58,21 +58,20 @@ include '../include/header.php';
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
-                
-                echo '<th>Available</th></tr>';
+                echo '<th>Available</th><th>Option</th></tr>';
                 $keyword = $_GET['value'];
                 while($row = $result->fetch_assoc()){
                     $book = preg_replace("/$keyword/i", "<b style='background-color:yellow;'>$0</b>", $row['book_title']);
-                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
+                    echo '<tr><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$book.'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
-                    
-                    echo '<td>'.$row['available'].'</td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();
             }
         }else{
+                echo "<h4><strong><u>All Books</u></strong></h4>";
                 $sql = "SELECT * FROM book;";
                 $result = $con->query($sql);
                 if($result->num_rows == 0){
@@ -82,14 +81,13 @@ include '../include/header.php';
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
-                
-                echo '<th>Available</th></tr>';
+                echo '<th>Available</th><th>Option</th></tr>';
                 while($row = $result->fetch_assoc()){
-                    echo '<tr onclick="view('.$row["isbn_no"].')"><td>'.$row['isbn_no'].'</td>';
+                    echo '<tr><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
                     
-                    echo '<td>'.$row['available'].'</td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();

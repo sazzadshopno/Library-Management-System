@@ -10,6 +10,7 @@
                 $data[] = $row['isbn_no'];
             } 
         }
+        $con->close();
         echo json_encode($data); 
     }
 ?>

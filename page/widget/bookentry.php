@@ -9,7 +9,7 @@
                 break;
             }
         }
-        if($flag){
+        if($flag || $isbn == ""){
             header("Location: ../managebook.php?error=isbn");
             exit();
         }

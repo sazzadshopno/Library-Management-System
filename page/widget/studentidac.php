@@ -10,6 +10,7 @@
                 $data[] = $row['student_id'];
             } 
         }
+        $con->close();
         echo json_encode($data); 
     }
 ?>

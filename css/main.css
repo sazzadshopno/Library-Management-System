@@ -92,7 +92,10 @@ select {
     font-size: 14px;
     margin: 5px;
 }
-
+td {
+    padding-bottom: .5rem;
+    padding-right: .5rem;
+}
 .result {
     padding: 15px;
 }
@@ -106,11 +109,9 @@ select {
     text-align: center;
 }
 .result td{
-    cursor: pointer;
+    padding-right: .5rem;
 }
-.result tr:hover{
-    font-weight: bold;
-}
+
 .result td, .result th{
     border: 1px solid #dddddd;
     text-align: left;
@@ -128,4 +129,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+label{
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
 }

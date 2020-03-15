@@ -2,7 +2,14 @@
     include('../../include/connection.php');
     if(isset($_POST['validate'])){
         $student_id = trim($_POST['student_id']);
-        if($student_id == ""){
+        $flag = 0;
+        for($i = 0; $i < strlen($student_id); $i++){
+            if(!is_numeric($student_id[$i])){
+                $flag = 1;
+                break;
+            }
+        }
+        if($flag || $student_id == ""){
             header("Location: ../managestudent.php?error=student_id");
             exit();
         }
