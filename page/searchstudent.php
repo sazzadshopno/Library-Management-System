@@ -19,7 +19,7 @@ include '../include/header.php';
     <?php
     include('../include/connection.php');
     if (isset($_GET['type'])) {
-        echo "<h4>Search result of: " . $_GET['value'] . " <button class= 'btn btn-secondary' onclick='viewsearch()'>&#10007; Clear</button></h4>";
+        echo "<h4>Search result of: " . $_GET['value'] . " <button class= 'btn btn-secondary btn-sm' onclick='viewsearch()'>&#10007; Clear</button></h4>";
         if ($_GET['type'] == 'id') {
             $id = $_GET['value'];
             $sql = "SELECT * FROM student WHERE student_id = $id;";
