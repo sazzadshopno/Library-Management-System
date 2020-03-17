@@ -99,7 +99,7 @@ include '../include/header.php';
             window.location = 'managebook.php?isbn=' + isbn + '&available=true';
         }
         function viewsearch(){
-            window.location = 'searchbook.php';
+            location.replace("searchbook.php");
         }
     </script>
 </body>

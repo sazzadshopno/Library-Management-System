@@ -108,7 +108,7 @@ include '../include/header.php';
             window.location = 'managestudent.php?student_id=' + id + '&available=true';
         }
         function viewsearch(){
-            window.location = 'searchstudent.php';
+            location.replace("searchstudent.php");
         }
     </script>
 </body>
