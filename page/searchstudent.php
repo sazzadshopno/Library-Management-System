@@ -125,7 +125,7 @@ include '../include/header.php';
                 $student_fine = $row1['student_fine'];
                 ?>
                 <h5 class="modal-title" id="myModalTitle"> <b><?php echo $student_name ?>'s</b> Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" onclick="viewsearch();" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

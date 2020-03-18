@@ -1,5 +1,12 @@
 <?php
 session_start();
+if(isset($_SESSION['username'])){
+    ?>
+    <script>
+        window.location.replace('./page/index.php');
+    </script>
+    <?php
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
