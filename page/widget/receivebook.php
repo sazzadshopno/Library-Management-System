@@ -22,7 +22,7 @@
 
         $due_date = strtotime($due_date);
         $today = strtotime($today);
-        $fine = (int)($today - $due_date)/60/60/24;;
+        $fine = (int)(($today - $due_date)/60/60/24);
         if($fine > 0){
             $sql4 = "UPDATE student SET student_fine = student_fine + $fine WHERE student_id = '$std_id'";
             $res4 = $con->query($sql4);
