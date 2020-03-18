@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('../../include/connection.php');
     if(isset($_POST['validate'])){
         $student_id = trim($_POST['student_id']);
@@ -25,7 +26,7 @@
         $student_session = $_POST['student_session'];
         $student_department = $_POST['student_department'];
         $student_roll = $_POST['student_roll'];
-        $librarian = '1';
+        $librarian = $_SESSION['id'];
         $date = date('Y-m-d');
         
         $studenttablesql = "INSERT INTO student (student_id, librarian_id, student_name, student_session, student_department, student_roll, student_fine, std_reg_date) VALUES ('$student_id', '$librarian','$student_name', '$student_session', '$student_department', '$student_roll', '0', '$date');";

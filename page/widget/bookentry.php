@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('../../include/connection.php');
     if(isset($_POST['validate'])){
         $isbn = trim($_POST['isbn_no']);
@@ -24,7 +25,7 @@
         $title = $_POST['title'];
         $author = $_POST['author'];
         $quantity = $_POST['quantity'];
-        $librarian = '1';
+        $librarian = $_SESSION['id'];;
         $date = date('Y-m-d');
 
         $booktablesql = "INSERT INTO book (isbn_no, book_title, book_author, stock, available, librarian_id, stock_date) VALUES ('$isbn_no', '$title', '$author', '$quantity', '$quantity', '$librarian', '$date');";

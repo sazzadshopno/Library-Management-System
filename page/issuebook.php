@@ -1,4 +1,12 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+	?>
+	<script type="text/javascript">
+		window.location.replace('../index.php?notloggedin=true');
+	</script>
+	<?php
+}
 include '../include/header.php';
 ?>
 <div class="container">

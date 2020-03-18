@@ -28,6 +28,16 @@ input[type="text"] {
     color: #343A40;
     font-size: 14px;
 }
+input[type="password"] {
+    width: 300px;
+    background: whitesmoke;
+    border: 1px #343A40 solid;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #343A40;
+    font-size: 14px;
+}
 input[type="number"] {
     width: 300px;
     background: whitesmoke;
