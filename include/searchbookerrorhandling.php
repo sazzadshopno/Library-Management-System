@@ -4,7 +4,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Invalid input. Try again.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('searchbook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -13,7 +13,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> No result found.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('searchbook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

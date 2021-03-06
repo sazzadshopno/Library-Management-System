@@ -4,7 +4,7 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Book issued.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -15,7 +15,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> occured while issuing the book. Please try again..
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -25,7 +25,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> The student with given ID does not exist in our database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -34,7 +34,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> The student already has 3 actively issued book..
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -43,7 +43,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> The book is not available right now. Try again tomorrow.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -52,7 +52,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> The book with given ISBN No. does not exist in our database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('issuebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

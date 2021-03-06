@@ -9,6 +9,8 @@ if(!isset($_SESSION['username'])){
 }
 include '../include/header.php';
 ?>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h3 class="custom_title">SEARCH BOOK</h3>
 <div class="container">
     <?php 
         include '../include/searchbookerrorhandling.php';
@@ -50,7 +52,7 @@ include '../include/header.php';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
                     
-                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Edit</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();
@@ -73,29 +75,30 @@ include '../include/header.php';
                     echo '<tr><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$book.'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
-                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Edit</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();
             }
         }else{
-                echo "<h4><strong><u>All Books</u></strong></h4>";
-                $sql = "SELECT * FROM book;";
-                $result = $con->query($sql);
-                if($result->num_rows == 0){
-                    exit();
-                }
+                echo "<h4><strong>All Books</strong></h4>";
                 echo "<table align='center'>";
                 echo '<tr><th>ISBN No.</th>';
                 echo '<th>Title</th>';
                 echo '<th>Author</th>';
                 echo '<th>Available</th><th>Option</th></tr>';
+                $sql = "SELECT * FROM book;";
+                $result = $con->query($sql);
+                if($result->num_rows == 0){
+                    exit();
+                }
+                
                 while($row = $result->fetch_assoc()){
                     echo '<tr><td>'.$row['isbn_no'].'</td>';
                     echo '<td>'.$row['book_title'].'</td>';
                     echo '<td>'.$row['book_author'].'</td>';
                     
-                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Update / Delete</button></td></tr>';
+                    echo '<td>'.$row['available'].'</td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="view('.$row["isbn_no"].')">Edit</button></td></tr>';
                 }
                 echo "</table>";
                 $con->close();
@@ -104,12 +107,14 @@ include '../include/header.php';
     </div>
     <script type=text/javascript language="javascript" >
         function view(isbn){
-            window.location = 'managebook.php?isbn=' + isbn + '&available=true';
+            window.location = 'managebook.php?isbn=' + isbn;
         }
         function viewsearch(){
             location.replace("searchbook.php");
         }
     </script>
+    </div>
+</div>
 </body>
 
 </html>

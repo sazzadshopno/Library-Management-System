@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
+
 * {
     font-family: 'Maven Pro', sans-serif;
 }
+
 body {
     margin: 0;
-    background: whitesmoke;
+    background: white;
 }
-.navbar-toggler:focus, .close:focus {
+
+.navbar-toggler:focus,
+.close:focus {
     outline: none;
 }
+
 .navbar a {
     font-weight: bold;
 }
+
 input {
     display: inline-block;
     font-size: 16px;
@@ -19,130 +25,193 @@ input {
     transition: 1s;
     margin: 5px;
 }
+
 input[type="text"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
 }
+
 input[type="password"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
 }
+
 input[type="number"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
 }
+
 input[type="date"] {
     width: 300px;
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
 }
+
 input[type="submit"] {
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 20px;
     font-weight: bolder;
-    color: #343A40;
+    color: #494ca2;
     border-radius: 12px;
     font-size: 14px;
     letter-spacing: 1.5px;
 }
+
 input[type="submit"]:hover {
     color: whitesmoke;
-    background: #343A40;
+    background: #494ca2;
     cursor: pointer;
 }
-.container{
+
+.custom_title {
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: #494ca2;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+}
+
+.container {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     width: 500px;
 }
+
 .container table {
     margin-top: 20px;
 }
-.container table tr{
+
+.container table tr {
     margin-bottom: 15px;
 }
+
 .container table td {
     font-weight: bolder;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
 }
+
 select {
     width: 300px;
     background: whitesmoke;
-    border: 1px #343A40 solid;
+    border: 1px #494ca2 solid;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #343A40;
+    color: #494ca2;
     font-size: 14px;
     margin: 5px;
 }
+
 td {
     padding-bottom: .5rem;
     padding-right: .5rem;
 }
+
 .result {
     padding: 15px;
 }
-.result table{
+
+.result table {
     border-collapse: collapse;
     text-align: left;
     width: 100%;
 }
+
 .result th {
     text-transform: uppercase;
     text-align: center;
 }
-.result td{
+
+.result td {
     padding-right: .5rem;
 }
 
-.result td, .result th{
+.result td,
+.result th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-.result tr:nth-child(even) {
-    background-color: #dddddd;
-}
+
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
-label{
+
+label {
     font-weight: lighter;
     margin: 0px;
     padding: 0px;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #494ca2;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+    background-color: #494ca2 !important;
 }

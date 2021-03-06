@@ -1,26 +1,7 @@
 <?php
     session_start();
     include('../../include/connection.php');
-    if(isset($_POST['validate'])){
-        $student_id = trim($_POST['student_id']);
-        $flag = 0;
-        for($i = 0; $i < strlen($student_id); $i++){
-            if(!is_numeric($student_id[$i])){
-                $flag = 1;
-                break;
-            }
-        }
-        if($flag || $student_id == ""){
-            header("Location: ../managestudent.php?error=student_id");
-            exit();
-        }
-        $sql = "SELECT * FROM student WHERE student_id = '$student_id' LIMIT 1;";
-        $result = $con->query($sql);
-        $available = $result->num_rows == 1? 'true' : 'false';
-        $con->close();
-        header("Location: ../managestudent.php?student_id=$student_id&available=$available"); 
-        exit();
-    }else if(isset($_POST['add'])){
+    if(isset($_POST['add'])){
         $student_id = $_POST['student_id'];
         $student_name = $_POST['student_name'];
         $student_session = $_POST['student_session'];
@@ -55,7 +36,6 @@
         exit();
     }else if(isset($_POST['delete'])){
         $student_id = $_POST['student_id'];
-        
         $sql = "DELETE FROM student WHERE student_id = $student_id;";
         $firstresult = $con->query($sql);
         $con->close();

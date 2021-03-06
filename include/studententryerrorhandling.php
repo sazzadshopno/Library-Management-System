@@ -4,7 +4,7 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Student information added into database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -13,7 +13,7 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Student information updated.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -22,7 +22,7 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Student information deleted from database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -33,7 +33,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Invalid Student ID number.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -43,7 +43,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not add the Student information into database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -52,7 +52,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not update the Student information.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -61,7 +61,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not delete Student information from database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managestudent.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

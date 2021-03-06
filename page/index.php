@@ -9,6 +9,8 @@ if(!isset($_SESSION['username'])){
 }
 include '../include/header.php';
 ?>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h3 class="custom_title">DASHBOARD</h3>
 <div class="container">
     <?php 
         include '../include/borrowbookerrorhandling.php';
@@ -40,9 +42,9 @@ include '../include/header.php';
     <?php 
         if(isset($_GET['isbn']) || isset($_GET['std_id'])){
             $val = isset($_GET['isbn']) ? $_GET['isbn'] : $_GET['std_id'];
-            echo "<h4><u><strong>Search result of:</strong></u> ". $val ." <button class= 'btn btn-secondary btn-sm' onclick='viewsearch()'>&#10007; Clear</button></h4>";
+            echo "<h4><strong>Search result of:</strong>". $val ." <button class= 'btn btn-secondary btn-sm' onclick='viewsearch()'>&#10007; Clear</button></h4>";
         }else{
-            echo "<h4><strong><u>Active Issued Books</u></strong></h4>";
+            echo "<h4><strong>Actively Issued Books</strong></h4>";
         }
     ?>
     
@@ -104,6 +106,8 @@ include '../include/header.php';
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 <?php
     if(isset($_GET['fine'])){

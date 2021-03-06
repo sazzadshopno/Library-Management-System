@@ -9,6 +9,8 @@ if(!isset($_SESSION['username'])){
 }
 include '../include/header.php';
 ?>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h3 class="custom_title">SEARCH STUDENT</h3>
 <div class="container">
     <?php
     include '../include/searchstudenterrorhandling.php';
@@ -52,7 +54,7 @@ include '../include/header.php';
                 echo '<td>' . $row['student_session'] . '</td>';
                 echo '<td>' . $row['student_department'] . '</td>';
                 echo '<td>' . $row['student_roll'] . '</td>';
-                echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Update / Delete</button></td></tr>';
+                echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Edit</button></td></tr>';
             }
             echo "</table>";
             $con->close();
@@ -79,18 +81,13 @@ include '../include/header.php';
                 echo '<td>' . $row['student_session'] . '</td>';
                 echo '<td>' . $row['student_department'] . '</td>';
                 echo '<td>' . $row['student_roll'] . '</td>';
-                echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Update / Delete</button></td></tr>';
+                echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Edit</button></td></tr>';
             }
             echo "</table>";
             $con->close();
         }
     } else {
-        echo "<h4><strong><u>All Students</u></strong></h4>";
-        $sql = "SELECT * FROM student;";
-        $result = $con->query($sql);
-        if ($result->num_rows == 0) {
-            exit();
-        }
+        echo "<h4><strong>All Students</strong></h4>";
         echo "<table align='center'>";
         echo '<tr><th>ID</th>';
         echo '<th>Name</th>';
@@ -98,13 +95,19 @@ include '../include/header.php';
         echo '<th>Department</th>';
         echo '<th>Roll</th>';
         echo '<th>Option</th><th>Action</th></tr>';
+        $sql = "SELECT * FROM student;";
+        $result = $con->query($sql);
+        if ($result->num_rows == 0) {
+            exit();
+        }
+        
         while ($row = $result->fetch_assoc()) {
             echo '<tr><td>' . $row["student_id"] . '</td>';
             echo '<td>' . $row['student_name'] . '</td>';
             echo '<td>' . $row['student_session'] . '</td>';
             echo '<td>' . $row['student_department'] . '</td>';
             echo '<td>' . $row['student_roll'] . '</td>';
-            echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Update / Delete</button></td></tr>';
+            echo '<td style="width:5%;"> <button type="button"  class="btn btn-secondary btn-sm" onclick="view(' . $row["student_id"] . ')">View</button> </td><td style="width:10%;"><button type="button" class="btn btn-secondary btn-sm" onclick="edit(' . $row["student_id"] . ')">Edit</button></td></tr>';
         }
         echo "</table>";
         $con->close();
@@ -200,7 +203,8 @@ if (isset($_GET['student_id'])) {
     echo "<script> $('#myModal').modal('show'); </script>";
 }
 ?>
-
+</div>
+</div>
 </body>
 <script type=text/javascript language="javascript">
     function edit(id){

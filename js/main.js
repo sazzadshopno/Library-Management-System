@@ -1,9 +1,19 @@
-function deleteClicked() {
-    return confirm('Do you really want to delete the book?');
-}
-function updateClicked() {
-    return confirm('Do you really want to update the book inventory?');
-}
-function addClicked() {
-    return confirm('Do you really want to add the book?');
-}
+(function($) {
+
+	"use strict";
+
+	var fullHeight = function() {
+
+		$('.js-fullheight').css('height', $(window).height());
+		$(window).resize(function(){
+			$('.js-fullheight').css('height', $(window).height());
+		});
+
+	};
+	fullHeight();
+
+	$('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+  });
+
+})(jQuery);

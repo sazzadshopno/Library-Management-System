@@ -9,6 +9,8 @@ if(!isset($_SESSION['username'])){
 }
 include '../include/header.php';
 ?>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h3 class="custom_title">ISSUE BOOK</h3>
 <div class="container">
     <form action="widget/issuebookentry.php" method="post">
         <table align="center">
@@ -22,6 +24,8 @@ include '../include/header.php';
             ?>
         </table>
     </form>
+</div>
+</div>
 </div>
 <script>
     function issueClicked() {

@@ -4,7 +4,7 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Book added into database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -13,21 +13,16 @@
             ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Book updated.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <?php
         }else if($_GET['success'] == 'delete'){
             ?>
-            <div class="panel pale-green display-container">
-            <span onclick="this.parentElement.style.display='none'"
-            class="button display-right">&times;</span>
-                <p>Book successfully deleted from database.</p>
-            </div>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Book deleted from database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -38,7 +33,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Invalid ISBN number.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -48,7 +43,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not add the book into database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -57,7 +52,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not update the book.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -66,7 +61,7 @@
             ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong> Could not delete book from database.
-                <button type="button" class="close" onclick="this.blur();" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" onclick="window.location.replace('managebook.php');" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

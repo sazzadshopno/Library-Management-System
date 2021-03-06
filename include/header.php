@@ -15,18 +15,24 @@ include 'config.php';
     <script src="../js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/jquery-ui.css" />
     <script src="../js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/style.css">
     <title><?php print $PAGE_TITLE; ?></title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="./index.php">LIBSYS</a>
-        <button class="navbar-toggler" type="button" onclick="this.blur();" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item <?php if ($CURRENT_PAGE == "Dashboard") { ?>active<?php } ?>">
+<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="" style='height:100vh'>
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only"></span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="./index.php" class="logo">LIBSYS</a></h1>
+	        <ul class="list-unstyled components mb-5">
+            <li class="nav-item <?php if ($CURRENT_PAGE == "Dashboard") { ?>active<?php } ?>">
                     <a class="nav-link" href="./index.php">DASHBOARD</a>
                 </li>
                 <li class="nav-item <?php if ($CURRENT_PAGE == "Issue Book") { ?>active<?php } ?>">
@@ -44,17 +50,18 @@ include 'config.php';
                 <li class="nav-item <?php if ($CURRENT_PAGE == "Search Student") { ?>active<?php } ?>">
                     <a class="nav-link" href="./searchstudent.php">SEARCH STUDENT</a>
                 </li>
-                <li>
-                    <div class="dropdown" style="position:absolute; right:0;">
-                        <button class="btn btn-dark dropdown-toggle nav-link" style="text-transform: uppercase; font-weight:bold;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_SESSION['name'] ?>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="./logout.php">LOGOUT</a>
-                        </div>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="./logout.php">LOGOUT</a>
                 </li>
-            </ul>
+	        </ul>
 
-        </div>
-    </nav>
+	        <div class="footer">
+	        	<p>
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved to Sazzad Hossain.
+						  </p>
+	        </div>
+
+	      </div>
+    	</nav>
+    
+    <script src="../js/main.js"></script>
