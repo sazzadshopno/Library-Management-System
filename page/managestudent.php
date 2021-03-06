@@ -31,8 +31,8 @@ if(!isset($_SESSION['username'])){
                         echo '<tr><td>Fine</td><td><input type="number" value = "'. $row['student_fine'] .'" name="student_fine"  autocomplete="off" readonly></td></tr>';
                         echo '<tr><td>Recieved Amount</td><td><input type="number" value = "0" min = "0" max = "'. $row['student_fine'] .'" name="student_fine_received"  autocomplete="off"></td></tr>';
                         
-                        echo '<tr><td><input type="submit" onclick="return studentupdateClicked();" name="update" value = "SAVE" ></td>';
-                        echo '<td><input type="submit" onclick="return studentdeleteClicked();" name="delete" value = "DELETE" ></td></tr>';
+                        echo '<tr><td><input type="submit" name="update" value = "SAVE" ></td>';
+                        echo '<td><input type="submit" name="delete" value = "DELETE" ></td></tr>';
 
                     } else {
                         ?>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['username'])){
                         echo '<tr><td>Session</td><td><select name="student_session"><option value="2020-21">2020-21</option><option value="2019-20">2019-20</option><option value="2018-19">2018-19</option><option value="2017-18">2017-18</option><option value="2016-17">2016-17</option><option value="2015-16">2015-16</option></select></td></tr>';
                         echo '<tr><td>Department</td><td><select name="student_department"><option value="CSE">CSE</option><option value="ECE">ECE</option><option value="BBA">BBA</option></select></td></tr>';
                         echo '<tr><td>Roll</td><td><input type="number" min = "0" placeholder = "Enter Roll.." name="student_roll" required="" autocomplete="off" ></td></tr>';
-                        echo '<tr><td></td><td><input type="submit" id="submitBtn" disabled="true" onclick="return studentaddClicked();" name="add" value = "ADD STUDENT" ></td></tr>';
+                        echo '<tr><td></td><td><input type="submit" id="submitBtn" disabled="true" name="add" value = "ADD STUDENT" ></td></tr>';
                 }
                 ?>
             </table>
