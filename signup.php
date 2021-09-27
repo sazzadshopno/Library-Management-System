@@ -17,10 +17,10 @@ if(isset($_SESSION['username'])){
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="./js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="./js/popper.min.js" crossorigin="anonymous"></script>
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/jquery-ui.css" />
     <script src="./js/jquery-ui.min.js"></script>
     <title>Log In</title>
@@ -63,15 +63,15 @@ if(isset($_SESSION['username'])){
             </tr>
             <tr>
                 <td>
-                    <input  type="text" name="firstname" id = "firstname" autocomplete="off" placeholder = "First Name" onkeyup = "Validate(this)" required /> 
+                    <input  type="text" name="firstname" id = "firstname" autocomplete="off" placeholder = "First Name" onkeyup = "Validate(this)" required />
                         <div id="errFirst"></div></td>
             </tr>
             <tr>
-                <td><input  type="text" name="lastname" id = "lastname" autocomplete="off" placeholder = "Last Name" onkeyup = "Validate(this)" required />  
+                <td><input  type="text" name="lastname" id = "lastname" autocomplete="off" placeholder = "Last Name" onkeyup = "Validate(this)" required />
                         <div id="errLast"></div></td>
             </tr>
             <tr>
-                <td><input  type="text" name="username" id = "username" autocomplete="off" onkeyup = "ValidateUsername(this); return false;" placeholder="Username" required />  
+                <td><input  type="text" name="username" id = "username" autocomplete="off" onkeyup = "ValidateUsername(this); return false;" placeholder="Username" required />
                         </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@ if(isset($_SESSION['username'])){
         $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
         $tsql = "SELECT MAX(librarian_id) as mx FROM librarian;";
         $result = $con->query($tsql);
-        
+
         $row = $result->fetch_assoc();
         $id = $row['mx'] + 1;
         $sql = "INSERT INTO librarian(librarian_id, librarian_name, librarian_username, librarian_password, is_active) VALUES ('$id', '$name', '$username', '$password', '0');";
@@ -106,13 +106,13 @@ if(isset($_SESSION['username'])){
         if ($result) {
             ?>
             <script>
-                window.location.replace('./index.php?error=notactive');
+                window.location.replace('./index.php');
             </script>
             <?php
         } else {
     ?>
             <script>
-                window.location.replace('./index.php?error=notactive');
+                window.location.replace('./index.php');
             </script>
     <?php
         }
@@ -125,7 +125,7 @@ function checkPass(){
     var submitBtn = document.getElementById('submitBtn')
     var goodColor = "#66cc66";
     var badColor = "#ff6666";
-    //Compare the values in the password field 
+    //Compare the values in the password field
     //and the confirmation field
     if(pass2.value.trim() == ''){
         pass2.style.backgroundColor = "";
@@ -137,7 +137,7 @@ function checkPass(){
         pass2.style.backgroundColor = "";
         submitBtn.disabled = false;
     }
-} 
+}
 // validates text only
 function Validate(txt) {
     txt.value = txt.value.replace(/[^a-zA-Z-'\n\r.]+/g, '');

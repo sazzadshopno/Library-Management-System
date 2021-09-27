@@ -9,10 +9,10 @@ include 'config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="../js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="../js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="../js/popper.min.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.4.1.min.js"></script>
-    <script src="../js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/jquery-ui.css" />
     <script src="../js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,5 +63,5 @@ include 'config.php';
 
 	      </div>
     	</nav>
-    
+
     <script src="../js/main.js"></script>
